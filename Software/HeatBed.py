@@ -27,7 +27,7 @@ GPIO.setup(sw_R, GPIO.IN)
 # Setup the pin to control the PSU and turn it off
 # PSU control pin is active low / False to turn on, High / True to turn off
 pinPSUctrl = 15
-PSUctrlOn = False # Set PSUctrlOn to False if pulling the control pin to GND turns the supply on
+PSUctrlOn = True  # Set PSUctrlOn to False if pulling the control pin to GND turns the supply on
                   # Set PSUctrlOn to True if pulling the control pin to 3.3V turns the supply on
 GPIO.setup(pinPSUctrl, GPIO.OUT)
 # Make sure that the supply off at start-up
