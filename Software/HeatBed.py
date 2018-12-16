@@ -31,7 +31,7 @@ PSUctrlOn = False # Set PSUctrlOn to False if pulling the control pin to GND tur
                   # Set PSUctrlOn to True if pulling the control pin to 3.3V turns the supply on
 GPIO.setup(pinPSUctrl, GPIO.OUT)
 # Make sure that the supply off at start-up
-GPIO.output(pinPSUctrl,Not PSUctrlOn) 
+GPIO.output(pinPSUctrl,not PSUctrlOn) 
 
 sensor = LM75.LM75()
 
@@ -80,7 +80,7 @@ def Heater_TurnOn():
 
 # Function for turning the heatbed power on
 def Heater_TurnOff():
-    GPIO.output(pinPSUctrl,Not PSUctrlOn)
+    GPIO.output(pinPSUctrl,not PSUctrlOn)
 
 #device = led.sevensegment()
 device = led.sevensegment(cascaded=2)
@@ -89,7 +89,7 @@ device = led.sevensegment(cascaded=2)
 # Main temperature control function
 def tempctrl():
     
-    GPIO.output(pinPSUctrl,Not PSUctrlOn) 
+    GPIO.output(pinPSUctrl,not PSUctrlOn) 
     Heater_On = False
     BedRunning = True
     
@@ -209,7 +209,7 @@ try:
 except KeyboardInterrupt:
 
     print "Switching off"
-    GPIO.output(pinPSUctrl,Not PSUctrlOn) 
+    GPIO.output(pinPSUctrl,not PSUctrlOn) 
     
     # Reset GPIO settings
     GPIO.cleanup()
